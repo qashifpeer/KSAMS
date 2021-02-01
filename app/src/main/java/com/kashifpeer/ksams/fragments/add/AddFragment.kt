@@ -11,8 +11,8 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.kashifpeer.ksams.R
-import com.kashifpeer.ksams.data.User
-import com.kashifpeer.ksams.data.UserViewModel
+import com.kashifpeer.ksams.model.User
+import com.kashifpeer.ksams.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -48,7 +48,12 @@ class AddFragment : Fragment() {
 
         if(inputCheck(firstName, lastName, age)){
             // Create User Object
-            val user = User(0, firstName, lastName, Integer.parseInt(age.toString()))
+            val user = User(
+                0,
+                firstName,
+                lastName,
+                Integer.parseInt(age.toString())
+            )
             // Add Data to Database
             mUserViewModel.addUser(user)
             Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_LONG).show()
