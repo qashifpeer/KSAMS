@@ -2,6 +2,7 @@ package com.kashifpeer.ksams.repository
 
 import androidx.lifecycle.LiveData
 import com.kashifpeer.ksams.data.UserDao
+import com.kashifpeer.ksams.model.Student
 import com.kashifpeer.ksams.model.User
 
 class UserRepository(private val userDao: UserDao) {

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:paddingRight="18dp"
+android:id="@+id/stdRowLayout"
+    android:background="#BBEDED">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        app:srcCompat="@drawable/ic_logo_login"
+        android:layout_alignParentStart="true"/>
+
+
+
+    <TextView
+        android:id="@+id/viewName_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_toEndOf="@+id/imageView"
+        android:layout_marginStart="6dp"
+        android:text="Name"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/viewFatherName_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="Father"
+        android:textSize="16sp"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_below="@+id/viewName_txt"
+        android:layout_marginLeft="6dp" />
+
+    <TextView
+        android:id="@+id/viewAdNum_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:text="(19)"
+        android:textSize="16sp"
+        android:layout_alignParentEnd="true" />
+    <TextView
+        android:id="@+id/viewClass_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="clss"
+        android:textSize="16sp"
+       />
+</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

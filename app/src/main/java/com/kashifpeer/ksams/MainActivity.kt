@@ -13,11 +13,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       setupActionBarWithNavController(findNavController(R.id.fragment))
+
+       btnFrag.setOnClickListener {
+           val intent = Intent(this, MainActivity2::class.java)
+           startActivity(intent)
+       }
+        btnFragStd.setOnClickListener {
+            val intent = Intent(this, MainActivity3::class.java)
+            startActivity(intent)
+        }
 
     }
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.fragment)
-        return navController.navigateUp() || super.onSupportNavigateUp()
-    }
+
 }
