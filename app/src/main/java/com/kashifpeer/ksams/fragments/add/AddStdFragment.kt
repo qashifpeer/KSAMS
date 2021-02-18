@@ -127,6 +127,7 @@ class AddStdFragment : Fragment() {
     private fun insertDataToDatabase() {
         var  stdGender=""
 
+
         val rollNum=rollNum_txt.text
         val adNum=adNum_txt.text
         val stdName=stdName_txt.text.toString()
@@ -138,7 +139,8 @@ class AddStdFragment : Fragment() {
         val birthDate=dob_dt.text.toString()
         val stdUid=uid_txt.text.toString()
         val stdPhone=phone_txt.text.toString()
-
+        val stdBankAcc=stdAccBank_txt.text.toString()
+        //var present=0
 
 
 
@@ -149,7 +151,7 @@ class AddStdFragment : Fragment() {
             stdGender="F"
         }
 
-        if(inputCheck(rollNum,adNum, stdName, fatherName,motherName,residence, stdClass,stdUid,stdPhone,stdGender,adDate,birthDate)){
+        if(inputCheck(rollNum,adNum, stdName, fatherName,motherName,residence,stdBankAcc, stdClass,stdUid,stdPhone,stdGender,adDate,birthDate)){
             // Create User Object
             val student = Student(
                 0,
@@ -164,11 +166,9 @@ class AddStdFragment : Fragment() {
                 stdPhone,
                 adDate,
                 birthDate,
-                stdGender
-
-
-
-
+                stdGender,
+                stdBankAcc
+                //present = 0
             )
             // Add Data to Database
             mStdViewModel.addStudent(student)
@@ -193,19 +193,25 @@ class AddStdFragment : Fragment() {
         stdPhone: String,
         adDate:String,
         birthDate: String,
-        stdGender: String
+        stdGender: String,
+        stdBankAcc: String
 
 
 
     ): Boolean{
-        return !(rollNum.isEmpty() && TextUtils.isEmpty(stdName)
+        return !(rollNum.isEmpty()
+                && TextUtils.isEmpty(stdName)
                 && TextUtils.isEmpty(fatherName)
+                && TextUtils.isEmpty(motherName)
                 && TextUtils.isEmpty(stdClass)
+                && TextUtils.isEmpty(residence)
                 && TextUtils.isEmpty(stdUid)
                 && TextUtils.isEmpty(stdPhone)
                 && TextUtils.isEmpty(adDate)
+                && TextUtils.isEmpty(adNum)
                 && TextUtils.isEmpty(birthDate)
-                && TextUtils.isEmpty(stdGender))
+                && TextUtils.isEmpty(stdGender)
+                && TextUtils.isEmpty(stdBankAcc))
     }
 
 

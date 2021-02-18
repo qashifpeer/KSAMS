@@ -21,4 +21,7 @@
         <item>8th</item>
 
     </string-array>
+    <string name="title_activity_display">DisplayActivity</string>
+    <string name="title_activity_classwise">ClasswiseActivity</string>
+    <string name="title_activity_classs">ClasssActivity</string>
 </resources>

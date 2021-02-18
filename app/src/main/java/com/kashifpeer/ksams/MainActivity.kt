@@ -23,6 +23,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btnViewClasswise.setOnClickListener {
+            val intent = Intent(this, ClasswiseActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }

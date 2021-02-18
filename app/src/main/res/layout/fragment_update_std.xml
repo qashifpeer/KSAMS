@@ -193,6 +193,28 @@
                         android:textStyle="bold"
                         android:textColor="@color/purple_700"/>
                 </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:id="@+id/bankField"
+                    android:layout_marginTop="5dp"
+                    app:errorTextColor="@color/error_color2"
+                    >
+
+                    <EditText
+                        android:id="@+id/Up_bankAcc_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Bank Account No"
+                        android:inputType="textCapSentences"
+                        android:textSize="18sp"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        android:textColor="@color/purple_700"/>
+                </com.google.android.material.textfield.TextInputLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

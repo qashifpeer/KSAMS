@@ -1,16 +1,12 @@
 package com.kashifpeer.ksams.fragments.list
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kashifpeer.ksams.R
 import com.kashifpeer.ksams.model.Student
-import kotlinx.android.synthetic.main.custom_row.view.*
 import kotlinx.android.synthetic.main.std_row.view.*
 
 class StdAdapter: RecyclerView.Adapter<StdAdapter.StdViewHolder>() {
@@ -32,9 +28,11 @@ class StdAdapter: RecyclerView.Adapter<StdAdapter.StdViewHolder>() {
         holder.itemView.viewAdNum_txt.text = currentItem.adNum.toString()
 
         holder.itemView.stdRowLayout.setOnClickListener {
+
             val action =ViewStdFragmentDirections.actionViewStdFragmentToUpdateStdFragment(currentItem)
             holder.itemView.findNavController().navigate(action)
         }
+
     }
 
     override fun getItemCount(): Int {
@@ -45,3 +43,4 @@ class StdAdapter: RecyclerView.Adapter<StdAdapter.StdViewHolder>() {
         notifyDataSetChanged()
     }
 }
+

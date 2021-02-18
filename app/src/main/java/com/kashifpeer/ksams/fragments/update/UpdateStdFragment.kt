@@ -61,7 +61,8 @@ class UpdateStdFragment : Fragment() {
         view.Up_phone_txt.setText(args.stdUser.stdPhone)
         view.Up_admDate_dt.setText(args.stdUser.adDate)
         view.Up_dob_dt.setText(args.stdUser.birthDate)
-        //Up_radioGroup.check(0)
+        view.Up_bankAcc_txt.setText(args.stdUser.stdBankAcc)
+
         view.UpClassSpinner.selectedItem((args.stdUser.stdClass))
         view.updateStd_btn.setOnClickListener {
 
@@ -141,6 +142,7 @@ class UpdateStdFragment : Fragment() {
         val stdPhone=Up_phone_txt.text.toString()
         val adDate=Up_admDate_dt.text.toString()
         val birthDate=Up_dob_dt.text.toString()
+        val stdBankAcc=Up_bankAcc_txt.text.toString()
 
         if(Up_male_radio.isChecked){
             stdGender="M"
@@ -148,10 +150,34 @@ class UpdateStdFragment : Fragment() {
         if(Up_female_radio.isChecked){
             stdGender="F"
         }
-        if (inputCheck(Up_adNum_txt.text,Up_rollNum_txt.text,stdName,fatherName,motherName,residence,stdUid,stdPhone,adDate,birthDate,stdGender)){
+        if (inputCheck(Up_adNum_txt.text,
+                        Up_rollNum_txt.text,
+                        stdName,
+                        fatherName,
+                        motherName,
+                        residence,
+                        stdUid,
+                        stdPhone,
+                        adDate,
+                        birthDate,
+                        stdBankAcc,
+                        stdGender)){
 
             // Create User Object
-            val updatedStd = Student(args.stdUser.id, adNum, rollNum, stdName,fatherName,motherName,residence,stdClass,stdUid,stdPhone,adDate,birthDate,stdGender)
+            val updatedStd = Student(args.stdUser.id,
+                    adNum,
+                    rollNum,
+                    stdName,
+                    fatherName,
+                    motherName,
+                    residence,
+                    stdBankAcc,
+                    stdClass,
+                    stdUid,
+                    stdPhone,
+                    adDate,
+                    birthDate,
+                    stdGender)
             // Update Current User
             mStdViewModel.updateStudent(updatedStd)
             Toast.makeText(requireContext(), "Updated Successfully!", Toast.LENGTH_SHORT).show()
@@ -170,6 +196,7 @@ class UpdateStdFragment : Fragment() {
         fatherName: String,
         motherName: String,
         residence: String,
+        stdBankAcc:String,
         stdUid:String,
         stdPhone:String,
         adDate:String,
@@ -180,6 +207,7 @@ class UpdateStdFragment : Fragment() {
                 && TextUtils.isEmpty(fatherName)
                 && TextUtils.isEmpty(motherName)
                 && TextUtils.isEmpty(residence)
+                && TextUtils.isEmpty(stdBankAcc)
                 && TextUtils.isEmpty(stdUid)
                 && TextUtils.isEmpty(stdPhone)
                 && TextUtils.isEmpty(adDate)

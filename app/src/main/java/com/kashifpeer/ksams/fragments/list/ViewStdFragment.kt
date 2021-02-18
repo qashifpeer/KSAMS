@@ -3,7 +3,6 @@ package com.kashifpeer.ksams.fragments.list
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
-import android.widget.AdapterView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -31,7 +30,7 @@ class ViewStdFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_view_std, container, false)
 
         //************** code for Spinner Class of Student****** Begins hre*****
-        view.viewClassSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+       /* view.viewClassSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                     parent: AdapterView<*>?,
                     view: View,
@@ -51,7 +50,7 @@ class ViewStdFragment : Fragment() {
                 // can leave this empty
             }
         }
-
+*/
 
         //************** code for Spinner Class of Student****** End hre*****
 
@@ -70,7 +69,7 @@ class ViewStdFragment : Fragment() {
             adapter.setData(student)
         })
         view.addStd_fa.setOnClickListener {
-            findNavController().navigate(R.id.action_viewStdFragment_to_addStdFragment)
+        findNavController().navigate(R.id.action_viewStdFragment_to_addStdFragment)
         }
         // Add menu
         setHasOptionsMenu(true)

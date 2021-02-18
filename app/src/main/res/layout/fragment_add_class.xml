@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/btnFrag"
-    android:text="Go To Fragment"/>
+    tools:context=".fragments.add.AddClasswiseFragment">
+
+
+    <EditText
+        android:id="@+id/addClass_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Class" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnFragStd"
-        android:text="Students"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnViewClasswise"
-        android:text="Class Wise"/>
+        android:id="@+id/btnAddClass"
+        android:text="Add Class"/>
 
 </LinearLayout>

@@ -21,7 +21,11 @@ data class Student(
     val stdPhone :String,
     val adDate: String,
     val birthDate: String,
-    val stdGender: String
+    val stdGender: String,
+    val stdBankAcc: String
+
+
+
 
 
 ): Parcelable

@@ -25,8 +25,8 @@ interface StudentDao {
     @Query("SELECT * FROM std_table ORDER BY id ASC")
     fun readAllData(): LiveData<List<Student>>
 
-    @Query("SELECT * FROM std_table WHERE stdName LIKE :searchQuery")
-    fun searchDatabase(searchQuery: String): LiveData<List<Student>>
+    /*@Query("SELECT * FROM std_table WHERE stdName LIKE :searchQuery")
+    fun searchDatabase(searchQuery: String): LiveData<List<Student>>*/
 
 
 }
